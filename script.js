@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Reveal on scroll
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
-            
+
             btn.innerText = 'SENDING...';
             btn.disabled = true;
 
@@ -46,8 +46,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // AI Chatbot Widget Logic
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const closeChatbot = document.getElementById('close-chatbot');
+    const sendChat = document.getElementById('send-chat');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chatbot-messages');
+
+    let welcomeSent = false;
+
+    const addMessage = (text, sender) => {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${sender}-message`;
+        msgDiv.innerText = text;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.classList.toggle('hidden');
+        if (!welcomeSent && !chatbotWindow.classList.contains('hidden')) {
+            setTimeout(() => {
+                addMessage("Hello! I am the AI assistant. How can I help you with cinematic AI videos, explainer scripts, or automation tools today?", 'bot');
+                welcomeSent = true;
+            }, 500);
+        }
+    });
+
+    closeChatbot.addEventListener('click', () => {
+        chatbotWindow.classList.add('hidden');
+    });
+
+    sendChat.addEventListener('click', () => {
+        const text = chatInput.value.trim();
+        if (text) {
+            addMessage(text, 'user');
+            chatInput.value = '';
+            setTimeout(() => {
+                addMessage("Thank you for your message! This is a simulated demo. Please contact us via email for a real response.", 'bot');
+            }, 1000);
+        }
+    });
+
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendChat.click();
+    });
+
     // Dynamic Portfolio Hover Glow (Optional premium touch)
-    const cards = document.querySelectorAll('.service-card');
+    const cards = document.querySelectorAll('.service-card, .video-container');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const { x, y } = card.getBoundingClientRect();

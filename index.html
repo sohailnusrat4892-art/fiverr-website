@@ -42,13 +42,39 @@
                 video production.</p>
             <div class="hero-btns reveal">
                 <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                <a href="mailto:Irfannusrat892@gmail.com" class="btn btn-outline">Let's Talk</a>
             </div>
         </div>
         <div class="hero-visual">
             <div class="glow-sphere"></div>
         </div>
     </header>
+
+    <section id="masterpieces" class="masterpieces-section">
+        <div class="container">
+            <h2 class="section-title">Featured Masterpieces</h2>
+            <div class="masterpieces-grid">
+                <div class="video-container reveal">
+                    <div class="video-preview" style="background-image: url('masterpiece1.png');">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Chronicles of the Iron Hunt</h3>
+                        <p>Epic historical hunters in dramatic cinematic lighting.</p>
+                    </div>
+                </div>
+                <div class="video-container reveal">
+                    <div class="video-preview" style="background-image: url('masterpiece2.png');">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Neon Foundry</h3>
+                        <p>Complex industrial scenes with futuristic neon atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="services" class="services-section">
         <div class="container">
@@ -78,37 +104,20 @@
 
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <h2 class="section-title">Portfolio</h2>
-            <div class="portfolio-grid" id="portfolio-grid">
-                <!-- Portfolio items will be dynamically loaded or static placeholders -->
-                <div class="portfolio-item reveal">
-                    <img src="port1.png" alt="AI Video Project 1">
-                    <div class="portfolio-overlay">
-                        <h3>Cybernetic Origins</h3>
-                        <p>AI Cinematography</p>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal">
-                    <img src="port2.png" alt="AI Video Project 2">
-                    <div class="portfolio-overlay">
-                        <h3>Automation Hub</h3>
-                        <p>Software Development</p>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal">
-                    <img src="port3.png" alt="AI Video Project 3">
-                    <div class="portfolio-overlay">
-                        <h3>Future Echoes</h3>
-                        <p>Short Film</p>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal">
-                    <img src="https://picsum.photos/seed/ai4/800/450" alt="AI Video Project 4">
-                    <div class="portfolio-overlay">
-                        <h3>Workflow Pro</h3>
-                        <p>Extension Development</p>
-                    </div>
-                </div>
+            <h2 class="section-title">Visual Portfolio</h2>
+            <div class="masonry-gallery" id="masonry-gallery">
+                <!-- Masonry items will be dynamically loaded or static -->
+                <div class="masonry-item reveal"><img src="gallery1.png" alt="AI Cinematic Vision 1"></div>
+                <div class="masonry-item reveal"><img src="gallery2.png" alt="AI Cinematic Vision 2"></div>
+                <div class="masonry-item reveal tall"><img src="gallery3.png" alt="AI Cinematic Vision 3"></div>
+                <div class="masonry-item reveal"><img src="gallery4.png" alt="AI Cinematic Vision 4"></div>
+                <div class="masonry-item reveal wide"><img src="gallery5.png" alt="AI Cinematic Vision 5"></div>
+                <div class="masonry-item reveal"><img src="gallery6.png" alt="AI Cinematic Vision 6"></div>
+                <div class="masonry-item reveal tall"><img src="gallery7.png" alt="AI Cinematic Vision 7"></div>
+                <div class="masonry-item reveal"><img src="gallery8.png" alt="AI Cinematic Vision 8"></div>
+                <div class="masonry-item reveal"><img src="gallery9.png" alt="AI Cinematic Vision 9"></div>
+                <div class="masonry-item reveal wide"><img src="gallery10.png" alt="AI Cinematic Vision 10"></div>
+                <div class="masonry-item reveal"><img src="gallery11.png" alt="AI Cinematic Vision 11"></div>
             </div>
         </div>
     </section>
@@ -119,7 +128,8 @@
                 <h2 class="section-title">Ready to Elevate Your Project?</h2>
                 <p>Looking for a custom AI automation or a cinematic video? Let's discuss how I can help you scale.</p>
                 <div class="cta-wrapper">
-                    <a href="https://www.fiverr.com" class="btn btn-fiverr reveal" target="_blank">Hire Me on Fiverr</a>
+                    <a href="mailto:Irfannusrat892@gmail.com" class="btn btn-fiverr reveal" target="_blank">Contact Me
+                        Now</a>
                 </div>
                 <form id="contact-form" class="reveal">
                     <div class="form-group">
@@ -139,9 +149,30 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 AI VISION Portfolio. All rights reserved.</p>
+            <p>&copy; 2026 AI VISION Portfolio. Contact: <a href="mailto:Irfannusrat892@gmail.com"
+                    style="color: var(--accent);">Irfannusrat892@gmail.com</a></p>
         </div>
     </footer>
+
+    <!-- AI Chatbot Widget -->
+    <div id="ai-chatbot" class="chatbot-container">
+        <div id="chatbot-toggle" class="chatbot-toggle">
+            <span class="chat-icon">💬</span>
+        </div>
+        <div id="chatbot-window" class="chatbot-window hidden">
+            <div class="chatbot-header">
+                <h3>AI Assistant</h3>
+                <span id="close-chatbot" class="close-btn">&times;</span>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button id="send-chat" class="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
